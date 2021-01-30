@@ -6,17 +6,20 @@ var Engine = Matter.Engine,
 
 let engine;
 let world;
-let box;
+const boxes = [];
 
 function setup() {
   createCanvas(400, 400);
   engine = Engine.create();
   world = engine.world;
   Engine.run(engine);
-  box = new Box(200, 100, 50, 50);
+}
+
+function mousePressed() {
+  boxes.push(new Box(mouseX, mouseY, 20, 20));
 }
 
 function draw() {
   background(51);
-  box.show();
+  boxes.forEach((box) => box.show());
 }
