@@ -21,11 +21,17 @@ function setup() {
   World.add(world, ground);
 }
 
-function mousePressed() {
+function mouseDragged() {
   boxes.push(new Box(mouseX, mouseY, 20, 20));
 }
 
 function draw() {
   background(51);
   boxes.forEach((box) => box.show());
+
+  //Create a floor on the ground
+  noStroke(255);
+  fill(177);
+  rectMode(CENTER);
+  rect(200, height, width, 10);
 }
