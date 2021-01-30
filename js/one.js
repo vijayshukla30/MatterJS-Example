@@ -12,14 +12,11 @@ function setup() {
   createCanvas(400, 400);
   engine = Engine.create();
   world = engine.world;
-  box = Bodies.rectangle(200, 100, 80, 80);
-  World.add(world, [box]);
   Engine.run(engine);
-  console.log("box :>> ", box);
+  box = new Box(200, 100, 50, 50);
 }
 
 function draw() {
   background(51);
-
-  rect(box.position.x, box.position.y, 80, 80);
+  box.show();
 }
