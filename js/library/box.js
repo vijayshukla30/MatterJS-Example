@@ -22,6 +22,9 @@ function Box(x, y, w, h) {
     rotate(angle);
     rectMode(CENTER);
     // Draw Rect
+    strokeWeight(1);
+    stroke(255);
+    fill(127);
     rect(0, 0, this.w, this.h);
     pop();
   };
