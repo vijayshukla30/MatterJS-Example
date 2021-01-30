@@ -6,6 +6,7 @@ var Engine = Matter.Engine,
 
 let engine;
 let world;
+let ground;
 const boxes = [];
 
 function setup() {
@@ -13,6 +14,11 @@ function setup() {
   engine = Engine.create();
   world = engine.world;
   Engine.run(engine);
+  const options = {
+    isStatic: true,
+  };
+  ground = Bodies.rectangle(200, height, width, 10, options);
+  World.add(world, ground);
 }
 
 function mousePressed() {
